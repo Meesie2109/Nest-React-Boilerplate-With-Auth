@@ -1,0 +1,14 @@
+{
+  "extends": ["triple"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./apps/client/tsconfig.json"
+  },
+  "rules": {
+    "import/extensions": "off"
+  }
+}

@@ -1,0 +1,26 @@
+@use "sass:color";
+@use "sass:math";
+
+@mixin mobile {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+  
+  @mixin tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+  
+  @mixin desktop-large {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }

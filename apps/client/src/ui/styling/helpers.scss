@@ -1,0 +1,11 @@
+/*
+    Helper import file
+    
+    This will include everthing like variables
+    and mixins that can be imported by every
+    module without it adding addition styling
+    by itself.
+============================================================================= */
+
+@import './variables.scss';
+@import './mixins.scss';
