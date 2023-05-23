@@ -44,11 +44,25 @@ export class AuthContoller {
   async validateTokenAsync(
     @Cookies('token') token: string,
   ): Promise<ICreateResponse> {
-    console.log(token);
     await this.authService.validateToken(token);
     return {
       statusCode: 200,
       message: 'Token is valid',
+    };
+  }
+
+  // GET: /auth/signout
+  @Get('signout')
+  @HttpCode(200)
+  async signOutAsync(@Res({ passthrough: true }) response: Response) {
+    response.cookie('token', '', {
+      httpOnly: true,
+      expires: new Date(Date.now() + 5 * 1000),
+    });
+    response.cookie('checkToken', false);
+    return {
+      statusCode: 200,
+      message: 'User signed out successfully',
     };
   }
 }
