@@ -3,9 +3,9 @@ import Button from "../../../components/atoms/Button/Button";
 import InputField from "../../../components/atoms/InputField/InputField";
 import AuthCard from "../../../components/molecules/AuthCard/AuthCard";
 
-import $ from "./LoginPage.module.scss";
+import $ from "./RegisterPage.module.scss";
 
-const LoginPage: React.FunctionComponent = () => {
+const RegisterPage: React.FunctionComponent = () => {
   document.title = "Login";
 
   const error = "Invalid credentials";
@@ -15,8 +15,8 @@ const LoginPage: React.FunctionComponent = () => {
       <section className={$.container}>
         <AuthCard>
         {error && <p className={$.error}>{error}</p>}
-          <h1>Login</h1>
-          <h3>Welcome back! login to continue</h3>
+          <h1>Register</h1>
+          <h3>Welcome! Create an account to continue</h3>
           <form action="POST" onSubmit={() => console.log("hello")}>
               <InputField
                 id="username"
@@ -26,15 +26,29 @@ const LoginPage: React.FunctionComponent = () => {
                 maxLength={50}
               />
               <InputField
+                id="email"
+                type="text"
+                name="email"
+                placeholder="Email"
+                maxLength={50}
+              />
+              <InputField
                 id="password"
                 type="password"
                 name="password"
                 placeholder="Password"
                 maxLength={50}
               />
-              <Button type="submit">Login</Button>
+              <InputField
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Password"
+                maxLength={50}
+              />
+              <Button type="submit">Register</Button>
           </form>
-          <p className={$.sub}>Not have an account yet? <Link to={'/register'}>Register</Link> </p>
+          <p className={$.sub}>Already have an account? <Link to={'/login'}>Login</Link> </p>
         </AuthCard>
         <p className={$.disclaimer}>ⓒ 2023 all rights preserved</p>
       </section>
@@ -42,4 +56,4 @@ const LoginPage: React.FunctionComponent = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
