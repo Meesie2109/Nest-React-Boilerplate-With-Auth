@@ -1,6 +1,19 @@
 :root {
-    // Place to define global variables
-
-    // Example:
+    // Colors for the text:
     --color: #000;
+    --color-secondary: #fff;
+
+    // Colors for the background:
+    --background: #f3f3f3;
+    --background-secondary: #fff;
+
+    // Colors for the buttons:
+    --button: #4f5b65;
+    --button-hover: #ccc;
+
+    // Colors for the borders:
+    --border: #ccc;
+    --border-focus: rgb(106, 106, 106);
+
+    --error:#d0414e;
 }

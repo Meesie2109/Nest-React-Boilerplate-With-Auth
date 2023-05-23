@@ -1,0 +1,13 @@
+.auth_card {
+    background: var(--background-secondary);
+    height: 60rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(129, 129, 129, 0.2), 0 6px 20px 0 rgba(164, 164, 164, 0.19);
+    text-align: center;
+    padding: 2rem;
+
+    .content {
+        height: fit-content;
+        padding-top: 36%;
+    }
+}

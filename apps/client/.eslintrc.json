@@ -1,5 +1,8 @@
 {
   "extends": ["triple"],
+  "compilerOptions": {
+    "moduleResolution": "node"
+  },
   "env": {
     "browser": true,
     "node": true
