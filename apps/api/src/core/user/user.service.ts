@@ -16,11 +16,12 @@ export class UserService {
   }
 
   // Function to create a user with hashed password
-  async createUserAsync(email: string, password: string) {
+  async createUserAsync(email: string, name: string, password: string) {
     const hashedPassword = await hash(password, 10);
     return await this.prismaService.user.create({
       data: {
         email,
+        name,
         password: hashedPassword,
       },
     });

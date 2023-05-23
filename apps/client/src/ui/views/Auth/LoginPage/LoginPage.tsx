@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "../../../components/atoms/Button/Button";
 import InputField from "../../../components/atoms/InputField/InputField";
 import AuthCard from "../../../components/molecules/AuthCard/AuthCard";
+import useForm from "../../../hooks/useForm";
 
 import $ from "./LoginPage.module.scss";
 
 const LoginPage: React.FunctionComponent = () => {
   document.title = "Login";
 
-  const error = "Invalid credentials";
+  const { handleLogin, error } = useForm();
 
   return (
     <>
@@ -17,12 +18,12 @@ const LoginPage: React.FunctionComponent = () => {
         {error && <p className={$.error}>{error}</p>}
           <h1>Login</h1>
           <h3>Welcome back! login to continue</h3>
-          <form action="POST" onSubmit={() => console.log("hello")}>
+          <form action="POST" onSubmit={handleLogin}>
               <InputField
-                id="username"
+                id="email"
                 type="text"
-                name="username"
-                placeholder="Username"
+                name="email"
+                placeholder="Email"
                 maxLength={50}
               />
               <InputField

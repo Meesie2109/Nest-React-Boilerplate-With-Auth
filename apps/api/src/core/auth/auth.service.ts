@@ -40,11 +40,11 @@ export class AuthService {
   }
 
   // Function to sign up as a user
-  async signUp(email: string, password: string): Promise<User> {
+  async signUp(email: string, name: string, password: string): Promise<User> {
     const user = await this.userService.findOne(email);
 
     if (!user) {
-      return await this.userService.createUserAsync(email, password);
+      return await this.userService.createUserAsync(email, name, password);
     }
     throw new ConflictException('User already exists');
   }

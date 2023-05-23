@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "../../../components/atoms/Button/Button";
 import InputField from "../../../components/atoms/InputField/InputField";
 import AuthCard from "../../../components/molecules/AuthCard/AuthCard";
+import useForm from "../../../hooks/useForm";
 
 import $ from "./RegisterPage.module.scss";
 
 const RegisterPage: React.FunctionComponent = () => {
   document.title = "Login";
 
-  const error = "Invalid credentials";
+  const { handleRegister, error } = useForm();
 
   return (
     <>
@@ -17,7 +18,7 @@ const RegisterPage: React.FunctionComponent = () => {
         {error && <p className={$.error}>{error}</p>}
           <h1>Register</h1>
           <h3>Welcome! Create an account to continue</h3>
-          <form action="POST" onSubmit={() => console.log("hello")}>
+          <form action="POST" onSubmit={handleRegister}>
               <InputField
                 id="username"
                 type="text"
@@ -40,10 +41,10 @@ const RegisterPage: React.FunctionComponent = () => {
                 maxLength={50}
               />
               <InputField
-                id="password"
+                id="passwordConf"
                 type="password"
-                name="password"
-                placeholder="Password"
+                name="passwordConf"
+                placeholder="Confirm password"
                 maxLength={50}
               />
               <Button type="submit">Register</Button>

@@ -22,7 +22,7 @@ export class AuthContoller {
   // POST: /auth/signup
   @Post('signup')
   async signUpAsync(@Body() dto: signUpDto): Promise<ICreateResponse> {
-    await this.authService.signUp(dto.email, dto.password);
+    await this.authService.signUp(dto.email, dto.name, dto.password);
     return {
       statusCode: 201,
       message: 'User signed up successfully',
