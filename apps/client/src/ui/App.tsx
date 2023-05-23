@@ -1,12 +1,11 @@
 import React from "react";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import  Router from "./router";
 
 function App() {
   return (
     <React.Suspense>
       <main>
-        <RouterProvider router={router} />
+        <Router />
       </main>
     </React.Suspense>
   );

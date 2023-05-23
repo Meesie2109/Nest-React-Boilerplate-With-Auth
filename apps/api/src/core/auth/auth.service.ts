@@ -48,4 +48,22 @@ export class AuthService {
     }
     throw new ConflictException('User already exists');
   }
+
+  // Function to validate a token
+  async validateToken(token: string): Promise<void> {
+    let payload: {
+      username: string;
+    };
+    try {
+      payload = await this.jwtService.verifyAsync(token);
+    } catch (error) {
+      throw new BadRequestException('Invalid token');
+    }
+
+    const user = await this.userService.findOne(payload.username);
+
+    if (!user) {
+      throw new BadRequestException('Invalid token');
+    }
+  }
 }

@@ -49,7 +49,10 @@ export default () => {
       if (data.statusCode === 500) {
         // Message when server is down
         setError("Somehting went wrong, please try again later");
-      } else if (data.statusCode !== 200 && data.statusCode !== 201) {
+      } else if (
+        (data.statusCode !== 200 && type === "") ||
+        (data.statusCode !== 201 && type === "signup")
+      ) {
         // Message when server is up but something else went wrong
         setError(data.message);
       } else {
@@ -59,8 +62,7 @@ export default () => {
         } else {
           // Message when everything is ok
           setError(null);
-          localStorage.setItem("token", data.token);
-          window.location.href = "/overview";
+          window.location.href = "/";
         }
       }
     });

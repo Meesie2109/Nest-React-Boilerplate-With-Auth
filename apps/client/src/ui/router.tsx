@@ -1,27 +1,30 @@
-import { RouteObject, createBrowserRouter } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "./views/HomePage/Homepage";
 import LoginPage from "./views/Auth/LoginPage/LoginPage";
 import RegisterPage from "./views/Auth/RegisterPage/RegisterPage";
+import validateToken from "../core/utils/validateToken";
 
-export const paths = {
-    home: "/",
-    login: "/login",
-    register: "/register",
+const auth = await validateToken();
+
+export default () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {auth && (
+          <>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<Navigate to={"/"} />} />
+            <Route path="/register" element={<Navigate to={"/"} />} />
+          </>
+        )}
+        {!auth && (
+          <>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/login" element={<LoginPage />} />
+          </>
+        )}
+      </Routes>
+    </BrowserRouter>
+  );
 };
-
-export const routes: RouteObject[] = [
-    {
-        path: paths.home,
-        element: <HomePage />,
-    },
-    {
-        path: paths.login,
-        element: <LoginPage />,
-    },
-    {
-        path: paths.register,
-        element: <RegisterPage />,
-    }
-];
-
-export const router = createBrowserRouter(routes);
