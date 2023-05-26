@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../../../components/atoms/Button/Button";
 import InputField from "../../../components/atoms/InputField/InputField";
 import AuthCard from "../../../components/molecules/AuthCard/AuthCard";
-import useForm from "../../../hooks/useForm";
+import useForm from "../../../hooks/useAuth";
 
 import $ from "./LoginPage.module.scss";
 

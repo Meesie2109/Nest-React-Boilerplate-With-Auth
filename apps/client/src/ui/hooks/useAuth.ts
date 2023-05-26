@@ -62,7 +62,7 @@ export default () => {
         } else {
           // Message when everything is ok
           setError(null);
-          window.location.href = "/";
+          window.location.href = "/dashboard";
         }
       }
     });

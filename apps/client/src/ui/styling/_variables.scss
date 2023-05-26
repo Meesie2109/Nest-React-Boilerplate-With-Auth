@@ -2,10 +2,15 @@
     // Colors for the text:
     --color: #000;
     --color-secondary: #fff;
+    --color-dark-gray: #4f5b65;
+    --color-dark: #34393d;
+    --color-light-gray: #ccc;
 
     // Colors for the background:
     --background: #f3f3f3;
     --background-secondary: #fff;
+    --background-dark: #34393d;
+    --background-transparant: hsla(0, 0%, 100%, .2);
 
     // Colors for the buttons:
     --button: #4f5b65;
@@ -16,4 +21,6 @@
     --border-focus: rgb(106, 106, 106);
 
     --error:#d0414e;
+
+    --max-width: 1156px;
 }
