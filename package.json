@@ -14,7 +14,7 @@
         "url": "https://github.com/Meesie2109/Nest-React-Boilerplate-With-Auth/issues"
     },
     "dependencies": {
-        "turbo": "^1.10.3"
+        "turbo": "^1.10.7"
     },
     "scripts": {
         "dev": "turbo run dev",
