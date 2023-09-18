@@ -23,7 +23,7 @@
     "@nestjs/common": "^9.4.3",
     "@nestjs/config": "^2.3.2",
     "@nestjs/core": "^9.0.0",
-    "@nestjs/platform-express": "^10.0.2",
+    "@nestjs/platform-express": "^10.2.5",
     "@nestjs/jwt": "^10.0.3",
     "@prisma/client": "^4.16.2",
     "class-transformer": "^0.5.1",
